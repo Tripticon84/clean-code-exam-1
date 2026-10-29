@@ -19,4 +19,14 @@ describe("getHandPoint", () => {
   it("should return 30 with a Brelan", () => {
     expect(getHandPoint(hands[0])).toBe(30);
   });
+  it("should return 40 with a Suite of 5 cards", () => {
+    const suiteHand: Card[] = [
+      { value: 2, type: "hearts" },
+      { value: 3, type: "diamonds" },
+      { value: 4, type: "clubs" },
+      { value: 5, type: "spades" },
+      { value: 6, type: "hearts" },
+    ];
+    expect(getHandPoint(suiteHand)).toBe(40);
+  });
 });
