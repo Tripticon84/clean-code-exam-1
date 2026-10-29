@@ -1,7 +1,14 @@
 import { Card } from "../types/Card";
+import { HandIsBrelan } from "./hand";
 
 export function getHandPoint(hand: Card[]): number {
-  return 0;
+  let result = 0;
+
+  if (HandIsBrelan(hand)) {
+    result = 30;
+  }
+
+  return result;
 }
 
 export function getAllHandsPoint(hands: Card[][]): [number, number] {
