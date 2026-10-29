@@ -58,3 +58,14 @@ export function HandhasPair(hand: Card[]): boolean {
 export function HandisFull(hand: Card[]): boolean {
   return HandIsBrelan(hand) && HandhasPair(hand);
 }
+
+export function HandIsCarre(hand: Card[]): boolean {
+  let isCarre: boolean = false;
+
+  for (const card of hand) {
+    if (hand.filter((c) => c.value === card.value).length === 4) {
+      isCarre = true;
+    }
+  }
+  return isCarre;
+}
