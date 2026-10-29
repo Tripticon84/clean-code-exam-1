@@ -50,4 +50,14 @@ describe("getHandPoint", () => {
     ];
     expect(getHandPoint(fullhand)).toBe(50);
   });
+  it("should return 60 for a Carre", () => {
+    const carreHand: Card[] = [
+      { value: 2, type: "hearts" },
+      { value: 2, type: "diamonds" },
+      { value: 2, type: "clubs" },
+      { value: 2, type: "spades" },
+      { value: 3, type: "hearts" },
+    ];
+    expect(getHandPoint(carreHand)).toBe(60);
+  });
 });
