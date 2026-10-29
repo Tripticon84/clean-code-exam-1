@@ -8,4 +8,7 @@ describe("getHandPoint", () => {
   it("should return 0 with an empty Hand", () => {
     expect(getHandPoint([])).toBe(0);
   });
+  it("should return 30 with a Brelan", () => {
+    expect(getHandPoint([])).toBe(30);
+  });
 });
