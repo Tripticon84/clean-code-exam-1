@@ -60,4 +60,14 @@ describe("getHandPoint", () => {
     ];
     expect(getHandPoint(carreHand)).toBe(60);
   });
+  it("should return 70 for a QuinteFlush", () => {
+    const quinteFlushHand: Card[] = [
+      { value: 2, type: "hearts" },
+      { value: 3, type: "hearts" },
+      { value: 4, type: "hearts" },
+      { value: 5, type: "hearts" },
+      { value: 6, type: "hearts" },
+    ];
+    expect(getHandPoint(quinteFlushHand)).toBe(80);
+  });
 });
