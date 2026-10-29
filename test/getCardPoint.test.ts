@@ -40,4 +40,14 @@ describe("getHandPoint", () => {
     ];
     expect(getHandPoint(couleurHand)).toBe(45);
   });
+  it("should return 50 for a Full", () => {
+    const fullhand: Card[] = [
+      { value: 2, type: "hearts" },
+      { value: 2, type: "diamonds" },
+      { value: 2, type: "clubs" },
+      { value: 3, type: "spades" },
+      { value: 3, type: "hearts" },
+    ];
+    expect(getHandPoint(fullhand)).toBe(50);
+  });
 });

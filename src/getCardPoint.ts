@@ -1,19 +1,20 @@
 import { Card } from "../types/Card";
-import { HandIsBrelan, HandIsCouleur, HandIsSuite } from "./hand";
+import { HandIsBrelan, HandIsCouleur, HandisFull, HandIsSuite } from "./hand";
 
 export function getHandPoint(hand: Card[]): number {
   let result = 0;
 
-  if (HandIsBrelan(hand)) {
-    result = 30;
+  if (HandisFull(hand)) {
+    return 50;
   }
-
-  if (HandIsSuite(hand)) {
-    result = 40;
-  }
-
   if (HandIsCouleur(hand)) {
-    result = 45;
+    return 45;
+  }
+  if (HandIsBrelan(hand)) {
+    return 30;
+  }
+  if (HandIsSuite(hand)) {
+    return 40;
   }
 
   return result;
