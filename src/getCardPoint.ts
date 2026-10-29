@@ -6,6 +6,7 @@ import {
   HandisFull,
   HandIsQuinteFlush,
   HandIsSuite,
+  HighestCard,
 } from "./hand";
 
 export function getHandPoint(hand: Card[]): number {
@@ -28,6 +29,7 @@ export function getHandPoint(hand: Card[]): number {
   if (HandIsSuite(hand)) {
     return 40;
   }
+  result = HighestCard(hand);
 
   return result;
 }

@@ -73,3 +73,13 @@ export function HandIsCarre(hand: Card[]): boolean {
 export function HandIsQuinteFlush(hand: Card[]): boolean {
   return HandIsCouleur(hand) && HandIsSuite(hand);
 }
+
+export function HighestCard(hand: Card[]): number {
+  let max = 0;
+  for (const card of hand) {
+    if (card.value > max) {
+      max = card.value;
+    }
+  }
+  return max;
+}

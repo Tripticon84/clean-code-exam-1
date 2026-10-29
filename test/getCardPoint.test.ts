@@ -1,6 +1,7 @@
 import { describe, expect, it, test } from "vitest";
-import { getHandPoint } from "../src/getCardPoint";
+import { getAllHandsPoint, getHandPoint } from "../src/getCardPoint";
 import { Card } from "../types/Card";
+import { HighestCard } from "../src/hand";
 
 const hands: Card[][] = [
   [
@@ -69,5 +70,37 @@ describe("getHandPoint", () => {
       { value: 6, type: "hearts" },
     ];
     expect(getHandPoint(quinteFlushHand)).toBe(80);
+  });
+  it("should return highest card value", () => {
+    const hand: Card[] = [
+      { value: 2, type: "hearts" },
+      { value: 3, type: "diamonds" },
+      { value: 4, type: "clubs" },
+      { value: 5, type: "spades" },
+      { value: 13, type: "hearts" },
+    ];
+    expect(getHandPoint(hand)).toBe(13);
+  });
+});
+
+describe("HigestHand", () => {
+  test("should return hand[0] with the highest point", () => {
+    const hands: Card[][] = [
+      [
+        { value: 2, type: "hearts" },
+        { value: 2, type: "diamonds" },
+        { value: 2, type: "clubs" },
+        { value: 5, type: "spades" },
+        { value: 7, type: "hearts" },
+      ],
+      [
+        { value: 1, type: "hearts" },
+        { value: 1, type: "diamonds" },
+        { value: 1, type: "clubs" },
+        { value: 1, type: "spades" },
+        { value: 3, type: "hearts" },
+      ],
+    ];
+    expect(getAllHandsPoint(hands)).toEqual([30, 60]);
   });
 });
