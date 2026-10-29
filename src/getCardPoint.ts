@@ -10,6 +10,9 @@ import {
 export function getHandPoint(hand: Card[]): number {
   let result = 0;
 
+  if (HandIsCarre(hand)) {
+    return 60;
+  }
   if (HandisFull(hand)) {
     return 50;
   }
@@ -18,9 +21,6 @@ export function getHandPoint(hand: Card[]): number {
   }
   if (HandIsBrelan(hand)) {
     return 30;
-  }
-  if (HandIsCarre(hand)) {
-    return 60;
   }
   if (HandIsSuite(hand)) {
     return 40;
