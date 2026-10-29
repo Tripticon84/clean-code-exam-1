@@ -69,3 +69,7 @@ export function HandIsCarre(hand: Card[]): boolean {
   }
   return isCarre;
 }
+
+export function HandIsQuinteFlush(hand: Card[]): boolean {
+  return HandIsCouleur(hand) && HandIsSuite(hand);
+}

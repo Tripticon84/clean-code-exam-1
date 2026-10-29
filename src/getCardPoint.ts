@@ -4,12 +4,15 @@ import {
   HandIsCarre,
   HandIsCouleur,
   HandisFull,
+  HandIsQuinteFlush,
   HandIsSuite,
 } from "./hand";
 
 export function getHandPoint(hand: Card[]): number {
   let result = 0;
-
+  if (HandIsQuinteFlush(hand)) {
+    return 80;
+  }
   if (HandIsCarre(hand)) {
     return 60;
   }
