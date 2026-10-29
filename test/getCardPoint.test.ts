@@ -29,4 +29,15 @@ describe("getHandPoint", () => {
     ];
     expect(getHandPoint(suiteHand)).toBe(40);
   });
+
+  it("should return 45 for a Couleur", () => {
+    const couleurHand: Card[] = [
+      { value: 2, type: "hearts" },
+      { value: 3, type: "hearts" },
+      { value: 4, type: "hearts" },
+      { value: 5, type: "hearts" },
+      { value: 6, type: "hearts" },
+    ];
+    expect(getHandPoint(couleurHand)).toBe(45);
+  });
 });
